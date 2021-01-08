@@ -26,7 +26,16 @@ find the [Core Deliverables](#Core-Deliverables) section.
 
 The base URL for your backend is: `http://localhost:6001`
 
-### Base Deliverables
+## Core Deliverables
+
+As a user:
+
+1. When the app starts, I can see all plants.
+2. I can add a new plant to the page by submitting the form.
+3. I can mark a plant as "sold out".
+4. I can search for plants by their name and see a filtered list of plants.
+
+### Endpoints for Core Deliverables
 
 #### GET /plants
 
@@ -80,15 +89,6 @@ Example Response:
 }
 ```
 
-## Core Deliverables
-
-As a user:
-
-1. When the app starts, I can see all plants.
-2. I can add a new plant to the page by submitting the form.
-3. I can mark a plant as "sold out".
-4. I can search for plants by their name and see a filtered list of plants.
-
 ## Advanced Deliverables
 
 These deliverables are not required to pass the code challenge, but if you have
@@ -101,7 +101,15 @@ them however you see fit!
 > Note: If you are going to attempt these advanced deliverables, please be sure
 > to have a working commit with all the Core Deliverables first!
 
-### PATCH /plants/:id
+As a user:
+
+1. I can update the price of a plant and still see the updated price after
+   refreshing the page.
+2. I can delete a plant and it is still gone when I refresh the page.
+
+### Endpoints for Advanced Deliverables
+
+#### PATCH /plants/:id
 
 Required Headers:
 
@@ -130,18 +138,10 @@ Example Response:
 }
 ```
 
-### DELETE /plants/:id
+#### DELETE /plants/:id
 
 Example Response:
 
 ```json
 {}
 ```
-
-## Advanced Features
-
-As a user:
-
-1. I can update the price of a plant and still see the updated price after
-   refreshing the page.
-2. I can delete a plant and it is still gone when I refresh the page.

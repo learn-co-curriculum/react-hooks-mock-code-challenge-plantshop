@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# React Mock Code Challenge: Plantsy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
 
-## Available Scripts
+Use this gif as an example of how the app should work.
 
-In the project directory, you can run:
+![Demo GIF](./demo.gif)
 
-### `yarn start`
+## Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Welcome to Plantsy! You've been tasked with building out some features for the
+admin side of a plant store. The designers have put together the components and
+CSS. Now it's up to you to bring the features to life by adding stateful logic
+as well as persisting data to the backend via our API.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Your job will be to make our app work according to the user stories you will
+find the [Core Deliverables](#Core-Deliverables) section.
 
-### `yarn test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Fork and clone this repository.
+2. Run `npm start`. This will open both your React page on port 6002 and your
+   backend on port 6001.
 
-### `yarn build`
+## Endpoints
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The base URL for your backend is: `http://localhost:6001`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Base Deliverables
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### GET /plants
 
-### `yarn eject`
+Example Response:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```json
+[
+  {
+    "id": 1,
+    "name": "Aloe",
+    "image": "./images/aloe.jpg",
+    "price": 15.99
+  },
+  {
+    "id": 2,
+    "name": "ZZ Plant",
+    "image": "./images/zz-plant.jpg",
+    "price": 25.98
+  }
+]
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### POST `/plants`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Required Headers:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```js
+{
+  "Content-Type": "application/json"
+}
+```
 
-## Learn More
+Request Object:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```json
+{
+  "name": "string",
+  "image": "string",
+  "price": number
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Example Response:
 
-### Code Splitting
+```json
+{
+  "id": 1,
+  "name": "Aloe",
+  "image": "./images/aloe.jpg",
+  "price": 15.99
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Core Deliverables
 
-### Analyzing the Bundle Size
+As a user:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. When the app starts, I can see all plants.
+2. I can add a new plant to the page by submitting the form.
+3. I can mark a plant as "sold out".
+4. I can search for plants by their name and see a filtered list of plants.
 
-### Making a Progressive Web App
+## Advanced Deliverables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+These deliverables are not required to pass the code challenge, but if you have
+the extra time, or even after the code challenge, they are a great way to
+stretch your skills.
 
-### Advanced Configuration
+You'll have to add additional elements for these features. Feel free to style
+them however you see fit!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> Note: If you are going to attempt these advanced deliverables, please be sure
+> to have a working commit with all the Core Deliverables first!
 
-### Deployment
+### PATCH /plants/:id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Required Headers:
 
-### `yarn build` fails to minify
+```js
+{
+  "Content-Type": "application/json"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Request Object:
+
+```json
+{
+  "price": number
+}
+```
+
+Example Response:
+
+```json
+{
+  "id": 1,
+  "name": "Aloe",
+  "image": "./images/aloe.jpg",
+  "price": 16.99
+}
+```
+
+### DELETE /plants/:id
+
+Example Response:
+
+```json
+{}
+```
+
+## Advanced Features
+
+As a user:
+
+1. I can update the price of a plant and still see the updated price after
+   refreshing the page.
+2. I can delete a plant and it is still gone when I refresh the page.

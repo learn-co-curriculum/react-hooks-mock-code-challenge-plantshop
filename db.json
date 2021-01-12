@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Aloe",
       "image": "./images/aloe.jpg",
-      "price": 15.99
+      "price": 1
     },
     {
       "id": 2,
@@ -35,12 +35,6 @@
       "name": "Monstera Deliciosa",
       "image": "./images/monstera.jpg",
       "price": 25.99
-    },
-    {
-      "id": 7,
-      "name": "Fiddle Leaf Fig",
-      "image": "./images/fiddle-leaf-fig.jpg",
-      "price": 55
     }
   ]
 }

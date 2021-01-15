@@ -4,7 +4,7 @@
 
 Use this gif as an example of how the app should work.
 
-![Demo GIF](./demo.gif)
+![Demo GIF](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-mock-code-challenge-plantshop/master/demo.gif)
 
 ## Instructions
 

@@ -9,7 +9,8 @@
     "react-scripts": "4.0.1"
   },
   "scripts": {
-    "start": "json-server --watch db.json -p 6001 & open http://localhost:6001/plants & PORT=6002 react-scripts start && fg"
+    "start": "react-scripts start",
+    "server": "json-server --watch db.json -p 6001"
   },
   "eslintConfig": {
     "extends": [

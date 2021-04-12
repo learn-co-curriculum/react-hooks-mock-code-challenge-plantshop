@@ -81,7 +81,7 @@ Request Object:
 }
 ```
 
-Example response:
+Example Response:
 
 ```json
 {

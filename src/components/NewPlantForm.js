@@ -1,5 +1,24 @@
 import React,{useState} from "react";
 
+
+//I can add a new Plant to the page by submitting the form
+  //have listener and handler for each input
+  //inputs onChange
+  //create state for the inputs
+  //value atribute on the input is assigned to the state
+  //state is updated to what was changed in the input
+
+  //have listner and handler for form
+  //form submit
+  //render PlantCard to DOM info from form by updating state of plants in the plant page
+  //post to db to persist and get id
+
+    //create a function to pass to the NewPlantForm that will update the state of plants.
+    //the new state of plants will be an array of the old state plus an newObject that is added to the end of the array
+      //new object is going to be the response data from the post
+
+  
+
 function NewPlantForm({handleAddPlant}) {
 
     const[name,setName]= useState("")

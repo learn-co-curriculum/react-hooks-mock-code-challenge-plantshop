@@ -17,7 +17,7 @@ function PlantPage() {
       .then((data)=>setPlantCard(data))
   }
 
-  useEffect(() =>{loadData()})
+  useEffect(() =>{loadData()},[])
 
   function handleAddPlant(newPlant){
     const updatePlants=[...plantCard,newPlant];
@@ -27,11 +27,16 @@ function PlantPage() {
   const currentPlants=plantCard.filter(plant=>{
     return plant.name.toLowerCase().includes(searchPlant.toLowerCase())
   })
+
+  function handleDeletePlant(id){
+    const updatedPlantsArray=plantCard.filter((plant)=>plant.id !==id);
+    setPlantCard(updatedPlantsArray)
+  }
   return (
     <main>
       <NewPlantForm handleAddPlant={handleAddPlant}/>
       <Search searchPlant={searchPlant} setSearchPlant={setSearchPlant} />
-      <PlantList plantCard={plantCard} currentPlants={currentPlants}/>
+      <PlantList plantCard={plantCard} currentPlants={currentPlants} onDeletePlant={handleDeletePlant}/>
     </main>
   );
 }

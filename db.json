@@ -1,18 +1,6 @@
 {
   "plants": [
     {
-      "id": 1,
-      "name": "Aloe",
-      "image": "./images/aloe.jpg",
-      "price": 15.99
-    },
-    {
-      "id": 2,
-      "name": "ZZ Plant",
-      "image": "./images/zz-plant.jpg",
-      "price": 25.98
-    },
-    {
       "id": 3,
       "name": "Pilea peperomioides",
       "image": "./images/pilea.jpg",
@@ -43,12 +31,6 @@
       "price": 55
     },
     {
-      "name": "a",
-      "image": "",
-      "price": "12",
-      "id": 8
-    },
-    {
       "name": "Cool Plant",
       "image": "https://hgtvhome.sndimg.com/content/dam/images/grdn/fullset/2014/6/25/0/CI_04-fbfd01d70004.jpg.rend.hgtvcom.966.725.suffix/1452664590074.jpeg",
       "price": "100000000",
@@ -65,12 +47,6 @@
       "image": "https://hgtvhome.sndimg.com/content/dam/images/grdn/fullset/2014/6/25/0/CI_04-fbfd01d70004.jpg.rend.hgtvcom.966.725.suffix/1452664590074.jpeg",
       "price": "111111",
       "id": 11
-    },
-    {
-      "name": "WALL-E",
-      "image": "https://static.wikia.nocookie.net/pixar/images/5/5e/WALL-E_plant1.jpg/revision/latest?cb=20111229205206",
-      "price": "10",
-      "id": 12
     },
     {
       "name": "losing my mind",

@@ -41,6 +41,18 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Rose",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqsbBwW-OhorWJbtKVL8w_xhdsurQNRH5HNyqOyl7_eND6pUOMpj_Sj3pV-F73x0cXy-A&usqp=CAU",
+      "price": "2.50",
+      "id": 8
+    },
+    {
+      "name": "Rose",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqsbBwW-OhorWJbtKVL8w_xhdsurQNRH5HNyqOyl7_eND6pUOMpj_Sj3pV-F73x0cXy-A&usqp=CAU",
+      "price": "2.50",
+      "id": 9
     }
   ]
 }

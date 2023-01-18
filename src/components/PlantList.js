@@ -3,7 +3,7 @@ import PlantCard from "./PlantCard";
 
 function PlantList({plants}) {
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">{plants.map(plant => <PlantCard plant={plant} key={plant.id}/>)}</ul>
   );
 }
 

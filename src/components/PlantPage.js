@@ -6,6 +6,7 @@ import Search from "./Search";
 function PlantPage() {
   //setter
   const [plants, setPlants] = useState([])
+  const [searchPlant, setSearchPlant]=useState('')
 
 
   //import all plants useEffect so it doesnt rerender only one fetch
@@ -20,14 +21,23 @@ const addNewPlant = (addedPlant)=>{
   setPlants([...plants, addedPlant])
 }
 
+const searchFilter = (searchInput) =>{
+  setSearchPlant(searchInput)
+}
+let filteredPlants = plants.filter(plant => plant.name.toLowerCase().includes(searchPlant))
+
+
   return (
     <main>
       <NewPlantForm 
       addNewPlant={addNewPlant}
       />
-      <Search />
+      <Search 
+      searchPlant={searchPlant}
+      searchFilter={searchFilter}
+      />
       <PlantList
-        plants={plants}
+        plants={filteredPlants}
       />
     </main>
   );

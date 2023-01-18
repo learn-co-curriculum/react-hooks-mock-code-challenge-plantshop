@@ -9,11 +9,8 @@ function Search({searchPlant, onSearchPlant}) {
         id="search"
         placeholder="Type a name to search..."
         value={searchPlant}
-        onChange={(e) => {
-          console.log("Searching...");
-          onSearchPlant
-        }}
-      />
+        onChange={onSearchPlant}
+        />
     </div>
   );
 }

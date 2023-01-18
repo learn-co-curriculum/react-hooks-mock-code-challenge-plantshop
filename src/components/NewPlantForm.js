@@ -19,6 +19,7 @@ function NewPlantForm({url, addNewPlant}) {
     setPlantPrice(e.target.value)
    }
 
+
    // SUBMISSION HANDLER & POST REQUEST
 
    function handleSubmit(e) {
@@ -39,7 +40,14 @@ function NewPlantForm({url, addNewPlant}) {
     })
     .then(res => res.json())
     .then(addNewPlant)
+
+    setPlantName("")
+    setPlantImageUrl("")
+    setPlantPrice(0)
    }
+
+
+
 
   return (
     <div className="new-plant-form">

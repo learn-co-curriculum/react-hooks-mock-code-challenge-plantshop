@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
+function PlantList({ plants, onPlantDelete }) {
   return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
+    <ul className="cards">
+      {plants.map((plant) => {
+        // console.log(plant);
+        return (
+          <PlantCard
+            key={plant.name}
+            plant={plant}
+            onPlantDelete={onPlantDelete}
+          />
+        );
+      })}
+    </ul>
   );
 }
 

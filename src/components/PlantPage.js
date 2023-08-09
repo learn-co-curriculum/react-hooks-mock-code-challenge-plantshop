@@ -5,26 +5,28 @@ import Search from "./Search";
 import { useState, useEffect } from "react";
 
 function PlantPage() {
-  const [plants, setPlants] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
 
+  // fetch and render
+  const [plants, setPlants] = useState([]);
   useEffect(() => {
     fetch("http://localhost:6001/plants")
-      .then((res) => res.json())
-      .then((plants) => {
-        console.log(plants);
-        setPlants(plants);
-      });
+    .then((res) => res.json())
+    .then((plants) => {
+      console.log(plants);
+      setPlants(plants);
+    });
   }, []);
 
+  // this is the POST  
   function onAddPlant(newPlant) {
     setPlants([...plants, newPlant]);
   }
-
+  
+  // this is the search deliverable
+  const [searchInput, setSearchInput] = useState("");
   function onSearchInput(searchText) {
     setSearchInput(searchText);
   }
-
   const plantsToDisplay = plants.filter((plant) => {
     return plant.name.toLowerCase().includes(searchInput.toLowerCase());
   });

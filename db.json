@@ -41,6 +41,18 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Ranuculas",
+      "image": "https://www.ikea.com/us/en/images/products/fejka-artificial-potted-plant-indoor-outdoor-ranunculus-pink__0614173_pe686837_s5.jpg?f=s",
+      "price": "500",
+      "id": 8
+    },
+    {
+      "name": "Purple Queen",
+      "image": "https://images.thdstatic.com/productImages/771d4904-f67a-4d47-9112-b36df08c782a/svn/altman-plants-annuals-0881225-fa_600.jpg",
+      "price": ".99",
+      "id": 9
     }
   ]
 }

@@ -1,9 +1,8 @@
-import React from "react";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage() {
+const PlantPage = () => {
   return (
     <main>
       <NewPlantForm />
@@ -11,6 +10,6 @@ function PlantPage() {
       <PlantList />
     </main>
   );
-}
+};
 
 export default PlantPage;

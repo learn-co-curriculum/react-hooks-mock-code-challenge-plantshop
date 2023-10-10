@@ -1,6 +1,4 @@
-import React from "react";
-
-function NewPlantForm() {
+const NewPlantForm = () => {
   return (
     <div className="new-plant-form">
       <h2>New Plant</h2>
@@ -12,6 +10,6 @@ function NewPlantForm() {
       </form>
     </div>
   );
-}
+};
 
 export default NewPlantForm;

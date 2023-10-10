@@ -1,6 +1,4 @@
-import React from "react";
-
-function PlantCard() {
+const PlantCard = () => {
   return (
     <li className="card">
       <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
@@ -13,6 +11,6 @@ function PlantCard() {
       )}
     </li>
   );
-}
+};
 
 export default PlantCard;

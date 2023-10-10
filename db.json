@@ -41,6 +41,24 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Aloe",
+      "image": "./images/aloe.jpg",
+      "price": 15.99,
+      "id": 8
+    },
+    {
+      "name": "ZZ Plant",
+      "image": "./images/zz-plant.jpg",
+      "price": 77.77,
+      "id": 9
+    },
+    {
+      "name": "Pothos",
+      "image": "./images/pothos.jpg",
+      "price": 8.95,
+      "id": 10
     }
   ]
 }

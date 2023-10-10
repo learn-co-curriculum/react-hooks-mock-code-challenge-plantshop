@@ -1,9 +1,15 @@
 import PlantCard from "./PlantCard";
 
-const PlantList = () => {
-  return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
-  );
+const PlantList = ({ allPlants, searchTxt }) => {
+  const plantCards = allPlants
+    .filter(
+      (plant) =>
+        searchTxt === "" ||
+        plant.name.toLowerCase().startsWith(searchTxt.toLowerCase())
+    )
+    .map((plant) => <PlantCard key={plant.id} {...plant} />);
+
+  return <ul className="cards">{plantCards}</ul>;
 };
 
 export default PlantList;

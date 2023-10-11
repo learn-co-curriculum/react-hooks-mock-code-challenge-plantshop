@@ -106,8 +106,7 @@ them however you see fit!
 
 As a user:
 
-1. I can update the price of a plant and still see the updated price after
-   refreshing the page.
+1. I can update the price of a plant and still see the updated price after refreshing the page.
 2. I can delete a plant and it is still gone when I refresh the page.
 
 ### Endpoints for Advanced Deliverables

@@ -39,7 +39,10 @@ function PlantPage() {
           price: parseFloat(e.target.parentNode.querySelector("input").value)
         })
       }).then(r => r.json())
-      .then(data => fetchPlants())
+      .then(data => {
+        fetchPlants();
+        e.target.parentNode.querySelector("input").value = ""
+      })
     }else{
       alert("Use A Number!")
     }

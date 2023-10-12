@@ -29,16 +29,20 @@ function PlantPage() {
   function updatePrice(e){
     // console.log(e.target.parentNode.id)
     // console.log(e.target.parentNode.querySelector("input").value)
-    fetch("http://localhost:6001/plants/" + e.target.parentNode.id, {
-      method: "PATCH",
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-      body : JSON.stringify({
-        price: parseFloat(e.target.parentNode.querySelector("input").value)
-      })
-    }).then(r => r.json())
-    .then(data => fetchPlants())
+    if(e.target.parentNode.querySelector("input").value){
+      fetch("http://localhost:6001/plants/" + e.target.parentNode.id, {
+        method: "PATCH",
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify({
+          price: parseFloat(e.target.parentNode.querySelector("input").value)
+        })
+      }).then(r => r.json())
+      .then(data => fetchPlants())
+    }else{
+      alert("Use A Number!")
+    }
 
   }
 

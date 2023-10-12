@@ -3,7 +3,13 @@ import React from "react";
 function NewPlantForm({ handleAddPlant, handleNewPlantInput }) {
   return (
     <div className="new-plant-form">
-      <h2>New Plant</h2>
+      <h2><span className="logo" role="img">
+          🌱
+        </span>
+        {" "}
+        New Plant
+      </h2>
+      
       <form onSubmit={handleAddPlant}>
         <input onChange={handleNewPlantInput} type="text" name="name" placeholder="Plant name" />
         <input onChange={handleNewPlantInput} type="text" name="image" placeholder="Image URL" />

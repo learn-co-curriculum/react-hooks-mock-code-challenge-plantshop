@@ -12,9 +12,9 @@ function PlantCard(plant) {
       ) : (
         <button>Out of Stock</button>
       )}
-      <button onClick={plant.handleDelete}>Delete</button>
+      <button className="secondary" onClick={plant.handleDelete}>Delete</button>
       <br />
-      <input type="number" placeholder="Enter New Price"></input> <button onClick={plant.updatePrice}>Update Price</button>
+      <input type="number" placeholder="Enter New Price"></input> <button className="secondary" onClick={plant.updatePrice}>Update Price</button>
     </li>
   );
 }

@@ -77,7 +77,7 @@ function PlantPage() {
       [e.target.name]: e.target.value
     })
     //logs plant data
-    // console.log(newPlantData)
+    console.log(newPlantData)
   }
 
   function handleDelete(e){

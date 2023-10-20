@@ -10,7 +10,7 @@ function PlantCard(plant) {
       {isInStock ? (
         <button onClick = {() => setIsInStock(!isInStock)} className="primary">In Stock</button>
       ) : (
-        <button>Out of Stock</button>
+        <button onClick = {() => setIsInStock(!isInStock)}>Out of Stock</button>
       )}
       <button className="secondary" onClick={plant.handleDelete}>Delete</button>
       <br />

@@ -76,7 +76,7 @@ function PlantPage() {
       id : uuid(),
       [e.target.name]: e.target.value
     })
-
+    //logs plant data
     // console.log(newPlantData)
   }
 

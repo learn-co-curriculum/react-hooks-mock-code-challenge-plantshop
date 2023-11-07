@@ -1,4 +1,5 @@
 import React from "react";
+import MarkAsSold from "./MarkAsSold";
 
 function PlantCard() {
   return (
@@ -11,6 +12,8 @@ function PlantCard() {
       ) : (
         <button>Out of Stock</button>
       )}
+
+      <MarkAsSold />
     </li>
   );
 }

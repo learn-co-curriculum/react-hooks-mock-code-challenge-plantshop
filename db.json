@@ -41,6 +41,42 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Sunflower",
+      "image": "https://cdn.apartmenttherapy.info/image/upload/v1693408794/at/home-projects/2023-08/growing-sunflowers-in-pots/potted-dwarf-sunflower-shutterstock_1715539732.jpg",
+      "price": "12",
+      "id": 8
+    },
+    {
+      "name": "Bird of Paradise",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/bright-living-room-with-a-large-house-plant-copy-royalty-free-image-1580854667.jpg?crop=0.479xw:0.998xh;0.0241xw,0&resize=980:*",
+      "price": "30",
+      "id": 9
+    },
+    {
+      "name": "Agave",
+      "image": "https://www.plantthefuture.com/content/uploads/2018/10/Agave-Americano.png",
+      "price": "50",
+      "id": 10
+    },
+    {
+      "name": "",
+      "image": "",
+      "price": "",
+      "id": 11
+    },
+    {
+      "name": "edgxfchvj",
+      "image": "gcfhv bjn",
+      "price": "345",
+      "id": 12
+    },
+    {
+      "name": "sjdf",
+      "image": "ldasfjnsda",
+      "price": "12",
+      "id": 13
     }
   ]
 }

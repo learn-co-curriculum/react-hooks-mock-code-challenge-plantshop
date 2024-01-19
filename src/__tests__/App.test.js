@@ -58,7 +58,7 @@ describe('Plantsy App', () => {
   // Test 1: Display all plants when the app starts
   test('displays all plants on startup', async () => {
     setFetchResponse(basePlants)
-    const { findAllByTestId } = render(<App />);
+    let { findAllByTestId } = render(<App />);
     const plantItems = await findAllByTestId('plant-item');
     expect(plantItems).toHaveLength(basePlants.length);
   });
@@ -67,18 +67,28 @@ describe('Plantsy App', () => {
   test('adds a new plant when the form is submitted', async () => {
     setFetchResponse(basePlants)
     const { getByPlaceholderText, findByText, getByText } = render(<App />)
-    global.fetch = jest.fn(() => Promise.resolve({
-      json: () => Promise.resolve({name: 'foobar', image: 'new_plant_image_url', price: '10', id: 8})
-    }))
-    fireEvent.change(getByPlaceholderText('Plant name'), { target: { value: 'foobar' } });
-    fireEvent.change(getByPlaceholderText('Image URL'), { target: { value: 'new_plant_image_url' } });
+
+    setFetchResponse({name: 'foo', image: 'foo_plant_image_url', price: '10'})
+
+    fireEvent.change(getByPlaceholderText('Plant name'), { target: { value: 'foo' } });
+    fireEvent.change(getByPlaceholderText('Image URL'), { target: { value: 'foo_plant_image_url' } });
     fireEvent.change(getByPlaceholderText('Price'), { target: { value: '10' } });
     fireEvent.click(getByText('Add Plant'))
     
-    setFetchResponse({name: 'foobar', image: 'new_plant_image_url', price: '10'})
 
-    const newPlant = await findByText('foobar');
+    const newPlant = await findByText('foo');
     expect(newPlant).toBeInTheDocument();
+
+    setFetchResponse({name: 'bar', image: 'bar_plant_image_url', price: '5'})
+
+    fireEvent.change(getByPlaceholderText('Plant name'), { target: { value: 'bar' } });
+    fireEvent.change(getByPlaceholderText('Image URL'), { target: { value: 'bar_plant_image_url' } });
+    fireEvent.change(getByPlaceholderText('Price'), { target: { value: '5' } });
+    fireEvent.click(getByText('Add Plant'))
+    
+
+    const secondPlant = await findByText('bar');
+    expect(secondPlant).toBeInTheDocument();
   });
 
   //  Test 3: Mark a plant as "sold out"

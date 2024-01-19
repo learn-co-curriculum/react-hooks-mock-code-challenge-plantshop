@@ -99,7 +99,7 @@ describe('Plantsy App', () => {
 
     // Get all plant items
     const plantItems = await findAllByTestId('plant-item');
-    expect(plantItems.length).toBeGreaterThan(0); // Ensure there are plants rendered
+    expect(plantItems).toHaveLength(basePlants.length);
 
     // Select the first plant item
     const firstPlantItem = plantItems[0];

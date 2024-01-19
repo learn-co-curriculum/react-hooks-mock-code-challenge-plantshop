@@ -64,8 +64,7 @@ describe('Plantsy App', () => {
     expect(plantItems).toHaveLength(basePlants.length);
   });
 
- // Test 2: Add a new plant
-
+  // Test 2: Add a new plant
   test('adds a new plant when the form is submitted', async () => {
     setFetchResponse(basePlants)
     const { getByPlaceholderText, findByText, getByText } = render(<App />)

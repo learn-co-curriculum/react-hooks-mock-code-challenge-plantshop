@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor, within, act } from '@testing-library/react';
+import { render, fireEvent, waitFor, within } from '@testing-library/react';
 import App from '../components/App';
 import '@testing-library/jest-dom';
 
@@ -60,7 +60,6 @@ describe('Plantsy App', () => {
     setFetchResponse(basePlants)
     const { findAllByTestId } = render(<App />);
     const plantItems = await findAllByTestId('plant-item');
-    expect(plantItems).not.toHaveLength(0);
     expect(plantItems).toHaveLength(basePlants.length);
   });
 

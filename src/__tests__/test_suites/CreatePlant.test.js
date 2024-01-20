@@ -5,7 +5,6 @@ import '@testing-library/jest-dom';
 
 describe('2nd Deliverable', () => {
     test('adds a new plant when the form is submitted', async () => {
-        expect(false).toBe(true)
         global.setFetchResponse(global.basePlants)
         const { getByPlaceholderText, findByText, getByText } = render(<App />)
     

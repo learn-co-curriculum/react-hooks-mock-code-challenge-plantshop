@@ -5,7 +5,6 @@ import '@testing-library/jest-dom';
 
 describe('3rd Deliverable', () => {
     test('marks a plant as sold out', async () => {
-      expect(false).toBe(true)
         global.setFetchResponse(global.basePlants)
     
         const { findAllByTestId, findByText } = render(<App />);

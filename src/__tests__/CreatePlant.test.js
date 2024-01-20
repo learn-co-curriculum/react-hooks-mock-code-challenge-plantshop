@@ -14,7 +14,6 @@ describe('Plantsy app', () => {
         fireEvent.change(getByPlaceholderText('Image URL'), { target: { value: 'foo_plant_image_url' } });
         fireEvent.change(getByPlaceholderText('Price'), { target: { value: '10' } });
         fireEvent.click(getByText('Add Plant'))
-        
     
         const newPlant = await findByText('foo');
         expect(newPlant).toBeInTheDocument();
@@ -25,7 +24,6 @@ describe('Plantsy app', () => {
         fireEvent.change(getByPlaceholderText('Image URL'), { target: { value: 'bar_plant_image_url' } });
         fireEvent.change(getByPlaceholderText('Price'), { target: { value: '5' } });
         fireEvent.click(getByText('Add Plant'))
-        
     
         const secondPlant = await findByText('bar');
         expect(secondPlant).toBeInTheDocument();

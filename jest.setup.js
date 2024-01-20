@@ -44,6 +44,27 @@ global.basePlants = [
       "price": 55
     }
 ]
+
+global.alternatePlants = [
+    {
+      "id": 1,
+      "name": "Another Aloe",
+      "image": "./images/aloe.jpg",
+      "price": 12.88
+    },
+    {
+      "id": 2,
+      "name": "Another Jade",
+      "image": "./images/jade.jpg",
+      "price": 4.92
+    },
+    {
+      "id": 3,
+      "name": "Another Fiddle Leaf Fig",
+      "image": "./images/fiddle-leaf-fig.jpg",
+      "price": 55
+    }
+]
   
 global.setFetchResponse = (val) => {
     global.fetch = jest.fn(() => Promise.resolve({

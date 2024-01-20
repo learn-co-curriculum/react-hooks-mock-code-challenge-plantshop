@@ -1,10 +1,11 @@
 import React from 'react';
 import { render, fireEvent, within } from '@testing-library/react';
-import App from '../components/App';
+import App from '../../components/App';
 import '@testing-library/jest-dom';
 
 describe('3rd Deliverable', () => {
     test('marks a plant as sold out', async () => {
+      expect(false).toBe(true)
         global.setFetchResponse(global.basePlants)
     
         const { findAllByTestId, findByText } = render(<App />);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from '../components/App';
+import App from '../../components/App';
 import '@testing-library/jest-dom';
 
 describe('1st Deliverable', () => {

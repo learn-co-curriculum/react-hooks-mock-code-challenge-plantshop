@@ -3,7 +3,7 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 import App from '../components/App';
 import '@testing-library/jest-dom';
 
-describe('Plantsy app', () => {
+describe('4th Deliverable', () => {
     test('filters plants by name on search', async () => {
         global.setFetchResponse(global.basePlants)
         const { getByPlaceholderText, queryAllByTestId } = render(<App />);

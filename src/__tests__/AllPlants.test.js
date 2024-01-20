@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import App from '../components/App';
 import '@testing-library/jest-dom';
 
-describe('First Deliverable', () => {
+describe('1st Deliverable', () => {
     test('displays all plants on startup', async () => {
         global.setFetchResponse(global.basePlants)
         let { findAllByTestId } = render(<App />);

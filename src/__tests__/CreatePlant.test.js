@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import App from '../components/App';
 import '@testing-library/jest-dom';
 
-describe('Plantsy app', () => {
+describe('2nd Deliverable', () => {
     test('adds a new plant when the form is submitted', async () => {
         global.setFetchResponse(global.basePlants)
         const { getByPlaceholderText, findByText, getByText } = render(<App />)

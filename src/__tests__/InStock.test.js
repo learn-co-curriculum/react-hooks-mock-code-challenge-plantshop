@@ -3,7 +3,7 @@ import { render, fireEvent, within } from '@testing-library/react';
 import App from '../components/App';
 import '@testing-library/jest-dom';
 
-describe('Plantsy app', () => {
+describe('3rd Deliverable', () => {
     test('marks a plant as sold out', async () => {
         global.setFetchResponse(global.basePlants)
     

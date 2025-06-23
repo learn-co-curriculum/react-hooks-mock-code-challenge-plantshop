@@ -8,13 +8,17 @@ function PlantCard({ name, image, price }) {
       <img src={image} alt={name} />
       <h4>{name}</h4>
       <p>Price: {price}</p>
-      {isStocked ? (
-        <button className="primary" onClick={() => setIsStocked(!isStocked)}>
-          In Stock
-        </button>
-      ) : (
-        <button onClick={() => setIsStocked(!isStocked)}>Out of Stock</button>
-      )}
+      <div id="button-group">
+        {isStocked ? (
+          <button className="primary" onClick={() => setIsStocked(!isStocked)}>
+            In Stock
+          </button>
+        ) : (
+          <button onClick={() => setIsStocked(!isStocked)}>Out of Stock</button>
+        )}
+        <button>Edit</button>
+        <button id="delete-button">x</button>
+      </div>
     </li>
   );
 }

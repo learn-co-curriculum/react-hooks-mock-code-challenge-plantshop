@@ -7,6 +7,7 @@ function PlantPage({}) {
   const url = "http://localhost:6001/plants";
 
   const [plants, setPlants] = useState([]);
+  const [searchedPlant, setSearchedPlant] = useState("");
 
   useEffect(() => {
     fetch(url)
@@ -33,8 +34,8 @@ function PlantPage({}) {
   return (
     <main>
       <NewPlantForm handleNewPlant={handleNewPlant} />
-      <Search />
-      <PlantList plants={plants} />
+      <Search setSearchedPlant={setSearchedPlant} />
+      <PlantList plants={plants} searchedPlant={searchedPlant} />
     </main>
   );
 }

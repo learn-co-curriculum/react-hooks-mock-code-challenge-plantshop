@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const EditPlantForm = ({ plant, editPlant, setIsEditing }) => {
   const [name, setName] = useState(plant.name);
   const [image, setImage] = useState(plant.image);
   const [price, setPrice] = useState(plant.price);
+
+  useEffect(() => {
+    setName(plant.name);
+    setImage(plant.image);
+    setPrice(plant.price);
+  }, [plant]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -51,13 +51,27 @@ function PlantPage() {
     })
       .then((r) => r.json())
       .then((result) => {
+        const updateDisplay = (plant) =>
+          plant.id === result.id ? result : plant;
         const plantListCopy = [...plantList];
-        setPlantList(
-          plantListCopy.map((plant) =>
-            plant.id === result.id ? result : plant
-          )
+        const searchResultsCopy = [...searchResults];
+        setPlantList(plantListCopy.map((plant) => updateDisplay(plant)));
+        setSearchResults(
+          searchResultsCopy.map((plant) => updateDisplay(plant))
         );
       });
+  };
+
+  const deletePlant = (id) => {
+    fetch(fetchUrl + id, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      setPlantList(plantList.filter((plant) => plant.id !== id));
+      setSearchResults(searchResults.filter((plant) => plant.id !== id));
+    });
   };
 
   return (
@@ -75,6 +89,7 @@ function PlantPage() {
       <PlantList
         plantList={isSearching ? searchResults : plantList}
         selectPlant={selectPlant}
+        deletePlant={deletePlant}
       />
     </main>
   );

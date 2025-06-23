@@ -23,6 +23,12 @@ const PlantPage = () => {
     setSearchInput(search)
   }
 
+  const handleUpdatePlant = (updatedPlant) => {
+    setPlants(prev =>
+      prev.map(p => p.id === updatedPlant.id ? updatedPlant : p)
+    );
+  }
+
   const filterPlants = plants.filter((plant) => (
       plant.name.toLowerCase().includes(searchInput.toLowerCase())
   ))
@@ -39,7 +45,7 @@ const PlantPage = () => {
         handleSearch={handleSearch}
         searchInput={searchInput}
       />
-      <PlantList plants={listingsToDisplay} />
+      <PlantList plants={listingsToDisplay} handleUpdatePlant={handleUpdatePlant}/>
     </main>
   );
 }

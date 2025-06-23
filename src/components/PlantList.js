@@ -1,7 +1,7 @@
 import React from "react"
 import PlantCard from "./PlantCard"
 
-const PlantList = ({ plants }) => {
+const PlantList = ({ handleUpdatePlant, plants }) => {
 
   const renderPlants = plants.map(({id, image, name, price}) => (
     <PlantCard
@@ -10,6 +10,7 @@ const PlantList = ({ plants }) => {
       image={image}
       name={name}
       price={price}
+      handleUpdatePlant={handleUpdatePlant}
     />
   ))
 

@@ -13,9 +13,14 @@ function PlantPage() {
       .then((plants) => setPlantList(plants));
   }, []);
 
+  const addPlant = (newPlant) => {
+    const updatedList = [...plantList, newPlant];
+    setPlantList(updatedList);
+  };
+
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm addPlant={addPlant} />
       <Search />
       <PlantList plantList={plantList} />
     </main>

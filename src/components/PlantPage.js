@@ -1,14 +1,96 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NewPlantForm from "./NewPlantForm";
+import EditPlantForm from "./EditPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
+  const fetchUrl = "http://localhost:6001/plants/";
+  const [plantList, setPlantList] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [selectedPlant, setSelectedPlant] = useState({});
+
+  useEffect(() => {
+    fetch(fetchUrl)
+      .then((r) => r.json())
+      .then((plants) => setPlantList(plants));
+  }, []);
+
+  const addPlant = (newPlant) => {
+    const updatedList = [...plantList, newPlant];
+    setPlantList(updatedList);
+  };
+
+  const searchPlants = (search) => {
+    if (search !== "") {
+      setIsSearching(true);
+      setSearchResults(
+        plantList.filter((plant) =>
+          plant.name.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    } else {
+      setIsSearching(false);
+    }
+  };
+
+  const selectPlant = (plantObj) => {
+    setSelectedPlant(plantObj);
+    setIsEditing(true);
+  };
+
+  const editPlant = (id, editedPlant) => {
+    fetch(fetchUrl + id, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedPlant),
+    })
+      .then((r) => r.json())
+      .then((result) => {
+        const updateDisplay = (plant) =>
+          plant.id === result.id ? result : plant;
+        const plantListCopy = [...plantList];
+        const searchResultsCopy = [...searchResults];
+        setPlantList(plantListCopy.map((plant) => updateDisplay(plant)));
+        setSearchResults(
+          searchResultsCopy.map((plant) => updateDisplay(plant))
+        );
+      });
+  };
+
+  const deletePlant = (id) => {
+    fetch(fetchUrl + id, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      setPlantList(plantList.filter((plant) => plant.id !== id));
+      setSearchResults(searchResults.filter((plant) => plant.id !== id));
+    });
+  };
+
   return (
     <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList />
+      {isEditing ? (
+        <EditPlantForm
+          plant={selectedPlant}
+          editPlant={editPlant}
+          setIsEditing={setIsEditing}
+        />
+      ) : (
+        <NewPlantForm addPlant={addPlant} />
+      )}
+      <Search searchPlants={searchPlants} />
+      <PlantList
+        plantList={isSearching ? searchResults : plantList}
+        selectPlant={selectPlant}
+        deletePlant={deletePlant}
+      />
     </main>
   );
 }

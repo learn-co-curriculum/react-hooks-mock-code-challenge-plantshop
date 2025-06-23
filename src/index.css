@@ -28,6 +28,15 @@ button.primary {
   color: white;
 }
 
+#button-group {
+  display: flex;
+  gap: 10px;
+}
+
+#delete-button {
+  background-color: rgba(251, 56, 56, 0.499);
+}
+
 .app {
   margin: 0 auto;
   max-width: 1200px;
@@ -51,23 +60,23 @@ main {
   padding: 0 1rem;
 }
 
-.new-plant-form {
+.plant-form {
   padding: 2rem 1rem;
   margin: 2rem 0;
   background-color: rgba(181, 250, 181, 0.5);
 }
 
-.new-plant-form form {
+.plant-form form {
   display: flex;
   justify-content: center;
 }
 
-.new-plant-form input {
+.plant-form input {
   margin-right: 2rem;
   flex: 1;
 }
 
-.new-plant-form button {
+.plant-form button {
   width: 150px;
 }
 

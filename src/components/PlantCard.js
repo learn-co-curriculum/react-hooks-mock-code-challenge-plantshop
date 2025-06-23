@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
-function PlantCard() {
+function PlantCard({ plant, selectPlant, deletePlant }) {
+  const [isStocked, setIsStocked] = useState(true);
+
   return (
     <li className="card">
-      <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
-      <h4>{"plant name"}</h4>
-      <p>Price: {"plant price"}</p>
-      {true ? (
-        <button className="primary">In Stock</button>
-      ) : (
-        <button>Out of Stock</button>
-      )}
+      <img src={plant.image} alt={plant.name} />
+      <h4>{plant.name}</h4>
+      <p>Price: {plant.price}</p>
+      <div id="button-group">
+        {isStocked ? (
+          <button className="primary" onClick={() => setIsStocked(!isStocked)}>
+            In Stock
+          </button>
+        ) : (
+          <button onClick={() => setIsStocked(!isStocked)}>Out of Stock</button>
+        )}
+        <button onClick={() => selectPlant(plant)}>Edit</button>
+        <button id="delete-button" onClick={() => deletePlant(plant.id)}>
+          x
+        </button>
+      </div>
     </li>
   );
 }

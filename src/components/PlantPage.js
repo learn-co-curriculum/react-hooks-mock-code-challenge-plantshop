@@ -31,19 +31,6 @@ function PlantPage({}) {
       });
   };
 
-  const handleDelete = (id) => {
-    fetch(`${url}${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => deletePlant(id));
-  };
-
-  const deletePlant = (id) => {
-    const updatedplants = plants.filter((plant) => plant.id !== id);
-    setPlants(updatedplants);
-  };
-
   return (
     <main>
       <NewPlantForm handleNewPlant={handleNewPlant} />
@@ -51,7 +38,8 @@ function PlantPage({}) {
       <PlantList
         plants={plants}
         searchedPlant={searchedPlant}
-        handleDelete={handleDelete}
+        setPlants={setPlants}
+        url={url}
       />
     </main>
   );

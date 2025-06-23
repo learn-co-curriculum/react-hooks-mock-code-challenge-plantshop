@@ -4,7 +4,7 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage({}) {
-  const url = "http://localhost:6001/plants";
+  const url = "http://localhost:6001/plants/";
 
   const [plants, setPlants] = useState([]);
   const [searchedPlant, setSearchedPlant] = useState("");
@@ -31,11 +31,28 @@ function PlantPage({}) {
       });
   };
 
+  const handleDelete = (id) => {
+    fetch(`${url}${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then(() => deletePlant(id));
+  };
+
+  const deletePlant = (id) => {
+    const updatedplants = plants.filter((plant) => plant.id !== id);
+    setPlants(updatedplants);
+  };
+
   return (
     <main>
       <NewPlantForm handleNewPlant={handleNewPlant} />
       <Search setSearchedPlant={setSearchedPlant} />
-      <PlantList plants={plants} searchedPlant={searchedPlant} />
+      <PlantList
+        plants={plants}
+        searchedPlant={searchedPlant}
+        handleDelete={handleDelete}
+      />
     </main>
   );
 }

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({ plants, searchedPlant }) {
+function PlantList({ plants, searchedPlant, handleDelete }) {
   const renderPlants = () =>
-    filteredPlants.map((plant) => <PlantCard key={plant.id} plant={plant} />);
+    filteredPlants.map((plant) => (
+      <PlantCard key={plant.id} plant={plant} handleDelete={handleDelete} />
+    ));
 
   const filteredPlants = plants.filter((plant) =>
     plant.name.toLowerCase().includes(searchedPlant.toLowerCase())

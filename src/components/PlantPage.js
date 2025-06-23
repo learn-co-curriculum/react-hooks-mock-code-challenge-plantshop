@@ -4,11 +4,10 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
-  const fetchUrl = "http://localhost:6001/plants/";
   const [plantList, setPlantList] = useState([]);
 
   useEffect(() => {
-    fetch(fetchUrl)
+    fetch("http://localhost:6001/plants/")
       .then((r) => r.json())
       .then((plants) => setPlantList(plants));
   }, []);

@@ -25,7 +25,7 @@ function NewPlantForm({ addPlant }) {
   };
 
   return (
-    <div className="new-plant-form">
+    <div className="plant-form">
       <h2>New Plant</h2>
       <form onSubmit={handleSubmit}>
         <input

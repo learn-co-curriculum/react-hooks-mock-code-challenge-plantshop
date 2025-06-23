@@ -1,9 +1,24 @@
 import React, { useState } from "react"
+import DeleteBtn from "./DeleteBtn"
 import InStockBtn from "./InStockBtn"
 
-const PlantCard = ({ handleUpdatePlant, id, image, name, price}) => {
+const PlantCard = ({ removePlant, handleUpdatePlant, id, image, name, price, setPlants, url}) => {
   const [isInStock, setIsInStock] = useState(true)
   const [isEditingPrice, setIsEditingPrice] = useState(false)
+
+  const handleRemovePlant = (id) => {
+   fetch(`${url}${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (res.ok) {
+          setPlants(prevPlants => prevPlants.filter(plant => plant.id !== id));
+        } else {
+          throw new Error("Delete failed");
+        }
+      })
+      .catch(error => console.error(error));
+  }
 
   const handleStockChange = () => {
     setIsInStock(!isInStock)
@@ -50,6 +65,7 @@ const PlantCard = ({ handleUpdatePlant, id, image, name, price}) => {
         )}
       </p>
       <InStockBtn handleStockChange={handleStockChange} isInStock={isInStock}/>
+      <DeleteBtn id={id} onRemove={handleRemovePlant} />
     </li>
   );
 }

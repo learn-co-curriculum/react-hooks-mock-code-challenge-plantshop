@@ -45,7 +45,7 @@ const PlantPage = () => {
         handleSearch={handleSearch}
         searchInput={searchInput}
       />
-      <PlantList plants={listingsToDisplay} handleUpdatePlant={handleUpdatePlant}/>
+      <PlantList plants={listingsToDisplay} handleUpdatePlant={handleUpdatePlant} setPlants={setPlants} url={url}/>
     </main>
   );
 }

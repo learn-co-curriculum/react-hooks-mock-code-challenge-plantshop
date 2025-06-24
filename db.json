@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Money Plant",
+      "image": "https://jm.com.sg/cdn/shop/files/MoneyPlant6cm.jpg?v=1730701540&width=1214",
+      "price": "25.99",
+      "id": 8
     }
   ]
 }

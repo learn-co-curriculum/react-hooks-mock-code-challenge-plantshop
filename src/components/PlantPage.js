@@ -12,9 +12,15 @@ function PlantPage() {
       .then((plants) => setPlants(plants))
   }, [])
 
+  const handleNewPlant = (newPlant) => {
+    const updatedPlants = [...plants, newPlant]
+
+    setPlants(updatedPlants)
+  }
+
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onAddNewPlant={handleNewPlant} />
       <Search />
       <PlantList plants={plants} />
     </main>

@@ -20,11 +20,16 @@ function PlantPage() {
 
   const filteredPlants = plants.filter((plant) => plant.name.includes(search))
 
+  const handleDelete = (deletedPlantId) => {
+    const updatedPlants = plants.filter((plant) => plant.id !== deletedPlantId)
+    setPlants(updatedPlants)
+  }
+
   return (
     <main>
       <NewPlantForm onAddNewPlant={handleNewPlant} />
       <Search onSearch={setSearch} />
-      <PlantList plants={filteredPlants} />
+      <PlantList plants={filteredPlants} onDelete={handleDelete} />
     </main>
   )
 }

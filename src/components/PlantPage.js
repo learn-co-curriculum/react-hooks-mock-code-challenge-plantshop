@@ -6,6 +6,7 @@ import Search from "./Search"
 function PlantPage() {
   const [plants, setPlants] = useState([])
   const [search, setSearch] = useState("")
+  const [price, setPrice] = useState(0)
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -25,11 +26,22 @@ function PlantPage() {
     setPlants(updatedPlants)
   }
 
+  const handlePriceChange = (updatedPlant) => {
+    const updatedPlants = plants.map((plant) =>
+      plant.id === updatedPlant.id ? updatedPlant : plant
+    )
+    setPlants(updatedPlants)
+  }
+
   return (
     <main>
       <NewPlantForm onAddNewPlant={handleNewPlant} />
       <Search onSearch={setSearch} />
-      <PlantList plants={filteredPlants} onDelete={handleDelete} />
+      <PlantList
+        plants={filteredPlants}
+        onDelete={handleDelete}
+        onPriceChange={handlePriceChange}
+      />
     </main>
   )
 }

@@ -18,11 +18,13 @@ function PlantPage() {
     setPlants(updatedPlants)
   }
 
+  const filteredPlants = plants.filter((plant) => plant.name.includes(search))
+
   return (
     <main>
       <NewPlantForm onAddNewPlant={handleNewPlant} />
       <Search onSearch={setSearch} />
-      <PlantList plants={plants} />
+      <PlantList plants={filteredPlants} />
     </main>
   )
 }

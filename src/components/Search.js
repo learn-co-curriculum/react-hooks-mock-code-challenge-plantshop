@@ -3,15 +3,14 @@ import React, {useState} from "react"
 function Search({onSearch}) {
   const [searchTerm, setSearchTerm] = useState("")
 
-  const handleChange = (e) => setSearchTerm(e.target.value)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    onSearch(searchTerm)
+  const handleChange = (e) => {
+    const searchedPlant = e.target.value
+    setSearchTerm(searchedPlant)
+    onSearch(searchedPlant)
   }
 
   return (
-    <div className="searchbar" onSubmit={handleSubmit}>
+    <div className="searchbar">
       <label htmlFor="search">Search Plants:</label>
       <input
         type="text"

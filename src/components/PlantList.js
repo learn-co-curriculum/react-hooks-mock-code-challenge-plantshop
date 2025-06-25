@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import PlantCard from "./PlantCard"
 
-function PlantList({ onUpdate, plants, setPlants }) {
+function PlantList({ onDelete, onUpdate, plants, setPlants }) {
   useEffect(() => {
     fetch("http://localhost:6001/plants/")
       .then((response) => response.json())
@@ -11,7 +11,12 @@ function PlantList({ onUpdate, plants, setPlants }) {
   return (
     <ul className="cards">
       {plants.map((plant) => (
-        <PlantCard key={plant.id} onUpdate={onUpdate} plant={plant} />
+        <PlantCard
+          key={plant.id}
+          onDelete={onDelete}
+          onUpdate={onUpdate}
+          plant={plant}
+        />
       ))}
     </ul>
   )

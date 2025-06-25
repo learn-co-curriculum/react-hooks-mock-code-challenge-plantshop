@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function PlantCard({ plant, onUpdate }) {
+function PlantCard({ plant, onDelete, onUpdate }) {
   const [isInStock, setIsInStock] = useState(true)
   const [isEditingPrice, setIsEditingPrice] = useState(false)
 
@@ -8,7 +8,7 @@ function PlantCard({ plant, onUpdate }) {
     setIsInStock(!isInStock)
   }
 
-  const handleClick = () => {
+  const toggleIsEditingPrice = () => {
     setIsEditingPrice(!isEditingPrice)
   }
 
@@ -26,7 +26,13 @@ function PlantCard({ plant, onUpdate }) {
     })
       .then((response) => response.json())
       .then(onUpdate)
-      .then(() => setIsEditingPrice(!isEditingPrice))
+      .then(toggleIsEditingPrice)
+  }
+
+  const handleDelete = () => {
+    fetch("http://localhost:6001/plants/" + plant.id, {
+      method: "DELETE",
+    }).then(() => onDelete(plant))
   }
 
   return (
@@ -34,7 +40,7 @@ function PlantCard({ plant, onUpdate }) {
       <img src={plant.image} alt={plant.name} />
       <h4>{plant.name}</h4>
       <p>Price: {plant.price}</p>
-      <button onClick={handleClick}>Edit Price</button>
+      <button onClick={toggleIsEditingPrice}>Edit Price</button>
 
       {isEditingPrice && (
         <form onSubmit={handleSubmit}>
@@ -50,6 +56,8 @@ function PlantCard({ plant, onUpdate }) {
       ) : (
         <button onClick={toggleIsInStock}>Out of Stock</button>
       )}
+
+      <button onClick={handleDelete}>Delete</button>
     </li>
   )
 }

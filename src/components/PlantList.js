@@ -31,8 +31,8 @@ function PlantList({ plants, searchedPlant, setPlants, url }) {
   };
 
   const handlePriceUpdate = (updatedPlant) => {
-    const updatedPlants = plants.map((p) =>
-      p.id === updatedPlant.id ? updatedPlant : p
+    const updatedPlants = plants.map((plant) =>
+      plant.id === updatedPlant.id ? updatedPlant : plant
     );
     setPlants(updatedPlants);
   };

@@ -5,16 +5,21 @@ import Search from "./Search"
 
 function PlantPage() {
   const [plants, setPlants] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   const handleSubmit = (newPlant) => {
     setPlants([...plants, newPlant])
   }
 
+  const filteredPlants = plants.filter((plant) =>
+    plant.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
   return (
     <main>
       <NewPlantForm onSubmit={handleSubmit} />
-      <Search />
-      <PlantList plants={plants} setPlants={setPlants} />
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <PlantList plants={filteredPlants} setPlants={setPlants} />
     </main>
   )
 }

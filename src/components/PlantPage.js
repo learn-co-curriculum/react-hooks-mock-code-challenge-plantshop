@@ -6,9 +6,13 @@ import Search from "./Search"
 function PlantPage() {
   const [plants, setPlants] = useState([])
 
+  const handleSubmit = (newPlant) => {
+    setPlants([...plants, newPlant])
+  }
+
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onSubmit={handleSubmit} />
       <Search />
       <PlantList plants={plants} setPlants={setPlants} />
     </main>

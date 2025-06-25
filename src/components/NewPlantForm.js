@@ -4,13 +4,16 @@ function NewPlantForm({onAddNewPlant}) {
   const [formData, setFormData] = useState({
     name: "",
     image: "",
-    price: "",
+    price: 0,
   })
 
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-    const updatedForm = {...formData, [name]: value}
+    const updatedForm = {
+      ...formData,
+      [name]: name === "price" ? parseFloat(value) || 0 : value,
+    }
     setFormData(updatedForm)
   }
 

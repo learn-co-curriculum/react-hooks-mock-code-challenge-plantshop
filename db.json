@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Money Plant",
+      "image": "https://dreamgreen.in/cdn/shop/products/image_56d90c5d-b632-48ce-a683-c23251b229a4.heic?v=1658947008&width=1445",
+      "price": 25.99,
+      "id": 8
     }
   ]
 }

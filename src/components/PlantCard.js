@@ -12,7 +12,11 @@ function PlantCard({ plant, onUpdate }) {
     setIsEditingPrice(!isEditingPrice)
   }
 
-  const handleBlur = ({ target: { value } }) => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const value = document.querySelector("#price-input").value
+
     fetch("http://localhost:6001/plants/" + plant.id, {
       method: "PATCH",
       headers: {
@@ -29,15 +33,16 @@ function PlantCard({ plant, onUpdate }) {
     <li className="card">
       <img src={plant.image} alt={plant.name} />
       <h4>{plant.name}</h4>
-      <p>
-        {"Price: "}
+      <p>Price: {plant.price}</p>
+      <button onClick={handleClick}>Edit Price</button>
 
-        {isEditingPrice ? (
-          <input onBlur={handleBlur} defaultValue={plant.price} />
-        ) : (
-          <span onClick={handleClick}>{plant.price}</span>
-        )}
-      </p>
+      {isEditingPrice && (
+        <form onSubmit={handleSubmit}>
+          <input id={"price-input"} defaultValue={plant.price} />
+          <button type="submit">Save</button>
+        </form>
+      )}
+
       {isInStock ? (
         <button onClick={toggleIsInStock} className="primary">
           In Stock

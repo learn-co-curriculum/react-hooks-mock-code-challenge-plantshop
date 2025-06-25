@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Aloe",
       "image": "./images/aloe.jpg",
-      "price": 15.99
+      "price": 123
     },
     {
       "id": 2,
       "name": "ZZ Plant",
       "image": "./images/zz-plant.jpg",
-      "price": 25.98
+      "price": 33
     },
     {
       "id": 3,
@@ -41,6 +41,24 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Name",
+      "image": "image",
+      "price": 10.99,
+      "id": 8
+    },
+    {
+      "name": "Basil",
+      "image": "https://cdn.apartmenttherapy.info/image/upload/v1714493910/stock/GettyImages-927893926.jpg",
+      "price": 0,
+      "id": 9
+    },
+    {
+      "name": "asdf",
+      "image": "asdf",
+      "price": 123,
+      "id": 10
     }
   ]
 }

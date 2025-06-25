@@ -6,7 +6,6 @@ import Search from "./Search"
 function PlantPage() {
   const [plants, setPlants] = useState([])
   const [search, setSearch] = useState("")
-  const [price, setPrice] = useState(0)
 
   useEffect(() => {
     fetch("http://localhost:6001/plants")

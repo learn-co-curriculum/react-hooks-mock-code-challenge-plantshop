@@ -27,6 +27,7 @@ function PlantCard({plant, onDelete, onPriceChange}) {
       .then((r) => r.json())
       .then((updatedPlant) => {
         onPriceChange(updatedPlant)
+        setNewPrice("")
       })
   }
 

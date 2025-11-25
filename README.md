@@ -1,4 +1,4 @@
-# React Mock Code Challenge: Plantsy
+# Phase 2 Code Challenge: Plantsy
 
 ## Demo
 

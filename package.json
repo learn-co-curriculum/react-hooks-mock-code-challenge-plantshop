@@ -3,15 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dom": "^0.0.3",
     "json-server": "^0.16.3",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "node-fetch": "^2.7.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "server": "json-server --watch db.json -p 6001",
-    "test": "jest"
+    "test": "jest --bail"
   },
   "eslintConfig": {
     "extends": [
@@ -29,6 +31,22 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^14.5.2",
+    "axios": "^1.6.4",
+    "jest": "^27.5.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "/test_suites"
     ]
   }
 }

@@ -2,7 +2,7 @@
   "plants": [
     {
       "id": 1,
-      "name": "Aloe",
+      "name": "Aloe Vera",
       "image": "./images/aloe.jpg",
       "price": 15.99
     },
@@ -14,33 +14,26 @@
     },
     {
       "id": 3,
-      "name": "Pilea peperomioides",
-      "image": "./images/pilea.jpg",
-      "price": 5.99
+      "name": "Peace Lily",
+      "image": "./images/peace-lily.jpg",
+      "price": 18.50
     },
     {
       "id": 4,
-      "name": "Pothos",
-      "image": "./images/pothos.jpg",
-      "price": 12.11
+      "name": "Snake Plant",
+      "image": "./images/snake-plant.jpg",
+      "price": 22.00
     },
     {
       "id": 5,
-      "name": "Jade",
-      "image": "./images/jade.jpg",
-      "price": 10.37
+      "name": "Monstera Deliciosa",
+      "image": "./images/monstera.jpg",
+      "price": 35.50
     },
     {
       "id": 6,
-      "name": "Monstera Deliciosa",
-      "image": "./images/monstera.jpg",
-      "price": 25.99
-    },
-    {
-      "id": 7,
-      "name": "Fiddle Leaf Fig",
-      "image": "./images/fiddle-leaf-fig.jpg",
-      "price": 55
+      "name": "Pothos",
+      "image": "./images/pothos.jpg",
+      "price": 12.99
     }
-  ]
-}
+  ]}
